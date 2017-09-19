@@ -6,14 +6,14 @@ use Illuminate\Console\Command;
 
 use App\User;
 
-class DeleteUsersTableSeeder extends Command
+class DeleteUsers extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'delete:seeder';
+    protected $signature = 'delete:users';
 
     /**
      * The console command description.
@@ -38,11 +38,12 @@ class DeleteUsersTableSeeder extends Command
      * @return mixed
      */
     public function handle()
-    {
-        $data = User::all();
+    {        
+         $data = User::all();        
 
         foreach($data as $row){
             $row->delete();
         }
+        
     }
 }

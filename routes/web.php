@@ -14,3 +14,5 @@
 Route::get('home', 'HomeController@index');
 
 Route::get('home/details', 'HomeController@show');
+
+Route::get('delete-users', 'HomeController@destroy');

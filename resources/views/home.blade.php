@@ -11,65 +11,54 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
+        <link href="/css/myapp.css" rel="stylesheet">
     </head>
     <body>     
 
-        <div class="content">
-            <div class="title m-b-md">
-                My App 
-               <p></p>
+        <div>
+            <div class="blog-header">
+                <h1>My App</h1> 
+            <table> 
+                <thead>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                    <th>Company</th>
+                    <th>Country</th>
+                    <th>Delete User</th>
+                </thead>
+                <tbody>
+
+                @foreach($users as $user)
+
+                    <tr>
+                        <td>{{ $user->first_name }}</td>
+                        <td>{{ $user->last_name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->company }}</td>
+                        <td>{{ $user->country }}</td>
+                        <td>
+                            <form>
+                                <!-- {{ Form::hidden('userId', false) }} -->
+                                <!-- {{ Form::checkbox('userId', true) }} -->
+                                <input tabindex="1" type="checkbox" name="userIds[]" value="{{ $user->id }}" id="{{ $user }}">
+                            </form>
+                        </td>                        
+                    </tr>                   
+                    
+                @endforeach
+                <tr>
+                    <td style="border-bottom: none;"></td>
+                    <td style="border-bottom: none;"></td>
+                    <td style="border-bottom: none;"></td>
+                    <td style="border-bottom: none;"></td>
+                    <td style="border-bottom: none;"></td>
+                    <td style="border-bottom: none;"><a class="button" href="delete-users">Delete</a></td>
+                </tr>
+               
+
+                </tbody>
+            </table>
             </div>               
         </div>       
     </body>
