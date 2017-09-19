@@ -17,7 +17,10 @@
 
         <div>
             <div class="blog-header">
-                <h1>My App</h1> 
+                <h1>My App</h1>
+
+                @lang('messages.wellcome')
+            
             <table> 
                 <thead>
                     <th>First name</th>
