@@ -45,4 +45,10 @@ class HomeController extends Controller
        
         return redirect('home'); 
     }
+
+    public function filterByEmail($email){
+          
+        $users = User::where('email','like','%'.$email)->get();
+        return $users;
+    }
 }
