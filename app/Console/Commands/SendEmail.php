@@ -39,7 +39,7 @@ class SendEmail extends Command
      */
     public function handle()
     {
-        Mail::send('emails.queued_email', ['name' => 'Mladen'], function($message){
+        Mail::later(5,'emails.queued_email', ['name' => 'Mladen'], function($message){
             $message->to('mladen.a@vivifyideas.com', 'Mladen Arsovic')->subject('It works');
         });
 
