@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\MessageBag;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Mail\Mailable;
 use App\Http\Requests;
 
 use App\User;
@@ -47,8 +49,13 @@ class HomeController extends Controller
     }
 
     public function filterByEmail($email){
-          
+
         $users = User::where('email','like','%'.$email)->get();
         return $users;
+    }
+
+    public function sendEmail()
+    {
+
     }
 }
