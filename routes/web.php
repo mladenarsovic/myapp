@@ -17,3 +17,9 @@ Route::get('home/details', 'HomeController@show');
 
 Route::get('delete-users', 'HomeController@destroy');
 
+Route::get('/login','LoginController@index')->name('login');
+Route::post('/login','LoginController@store');
+Route::get('/logout','LoginController@destroy');
+Route::get('/register','RegisterController@index');
+Route::post('/register','RegisterController@store');
+
