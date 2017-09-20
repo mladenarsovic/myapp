@@ -20,13 +20,15 @@
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->company }}</td>
                 <td>{{ $user->country }}</td>
-                <td>
+                <!-- <td>
                     <form>
                         <!-- {{ Form::hidden('userId', false) }} -->
                         <!-- {{ Form::checkbox('userId', true) }} -->
-                        <input tabindex="1" type="checkbox" name="userIds[]" value="{{ $user->id }}" id="{{ $user }}">
+                        <!-- <input tabindex="1" type="checkbox" name="userIds[]" value="{{ $user->id }}" id="{{ $user }}">
                     </form>
-                </td>                        
+                </td>   -->
+                <td><a class="button" href="delete-users">Delete</a></td>
+                                       
             </tr>                   
             
         @endforeach

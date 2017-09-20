@@ -22,4 +22,5 @@ Route::post('/login','LoginController@store');
 Route::get('/logout','LoginController@destroy');
 Route::get('/register','RegisterController@index');
 Route::post('/register','RegisterController@store');
+Route::get('/search', 'HomeController@filterByEmail');
 

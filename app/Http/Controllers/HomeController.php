@@ -48,10 +48,12 @@ class HomeController extends Controller
         return redirect('home'); 
     }
 
-    public function filterByEmail($email){
+    public function filterByEmail(Request $email){
+
+        $email = Input::get('email');
 
         $users = User::where('email','like','%'.$email)->get();
-        return $users;
+        return view('home', compact('users'));
     }
 
     public function sendEmail()
