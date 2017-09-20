@@ -27,7 +27,11 @@
 
         <div class="form-group">
             <label for="country">Country</label>
-            <input type="text" class="form-control" id="country" name="country">
+            <select class="form-control" id="country" name="country">
+                @foreach(App\Http\Utilities\Country::all() as $country)
+                    <option value="{{ $country }}">{{ $country }}</option>
+                @endforeach
+            </select>
         </div>
 
         <div class="form-group">
@@ -60,7 +64,6 @@
             </div>
         @endforeach
     @endif
-
 
 
     @endsection

@@ -36,6 +36,7 @@ class RegisterController extends Controller
         $user->password = bcrypt(request('password'));
         $user->save();
         auth()->login($user);
+        
         return redirect('/home');
     }
 }
